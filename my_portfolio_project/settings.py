@@ -29,6 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['34.71.115.240',
     '127.0.0.1',
+    '34.121.145.5',
     'felixpoirier.com',
     'www.felixpoirier.com']
  
