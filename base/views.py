@@ -8,9 +8,9 @@ from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
 from .models import Project, FilePath
 import os
-import seaborn as sns
-import matplotlib.pyplot as plt
-from .portfolio import Portfolio
+#import seaborn as sns
+#import matplotlib.pyplot as plt
+#from .portfolio import Portfolio
 
 # Create your views here.
 def home(request):
@@ -23,13 +23,13 @@ def projectPage(request, pk):
     files = project.filepath_set.all()
     context = {'project': project, 'files': files}
     return render(request, 'project-details.html', context)
-
+'''
 def portfolioOpt(request):
 
     def displayWeights(df):
         return sns.catplot(kind = 'bar', x='pct', y = 'index', data=df.transpose().reset_index()).set(ylabel="ticker")
 
-    '''
+    
     real_path = os.path.realpath(__file__)
     dir_path = os.path.dirname(real_path)
     os.chdir(dir_path)
@@ -52,5 +52,5 @@ def portfolioOpt(request):
             stock_list.append(choice)    
     ####    
         
-    lol=Portfolio(stocks=stock_list, directory = path, local = True).optimize()'''
-    return render(request, 'portfolio-opt.html')
+    lol=Portfolio(stocks=stock_list, directory = path, local = True).optimize()
+    return render(request, 'portfolio-opt.html')'''
