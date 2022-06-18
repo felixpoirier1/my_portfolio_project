@@ -32,7 +32,8 @@ ALLOWED_HOSTS = ['34.71.115.240',
     '34.121.145.5',
     'felixpoirier.com',
     'www.felixpoirier.com',
-    '10.128.0.2']
+    '10.128.0.2',
+    'portfoliofelixpoirier.herokuapp.com']
  
 
 # Application definition
@@ -133,7 +134,7 @@ SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SECURE = False
 SECURE_SSL_REDIRECT = False
 
-'''SECURE_HSTS_SECONDS = 31536000
+'''SECURE_HSTS_SECONDS = 31536000                    
 SECURE_HSTS_PRELOAD = True
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True'''
 
