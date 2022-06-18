@@ -1,0 +1,13 @@
+prefix=/Users/felix/opt/anaconda3/envs/djangoenv
+exec_prefix=/Users/felix/opt/anaconda3/envs/djangoenv
+libdir=/Users/felix/opt/anaconda3/envs/djangoenv/lib
+sharedlibdir=/Users/felix/opt/anaconda3/envs/djangoenv/lib
+includedir=/Users/felix/opt/anaconda3/envs/djangoenv/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.12
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}
