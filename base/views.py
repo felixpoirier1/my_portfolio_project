@@ -33,7 +33,10 @@ def home(request):
     if subject and message and from_email:
         try:
             send_mail(subject, content, from_email, ['felixpoirier2001@gmail.com'], fail_silently = False)
-            print('LOLOL')
+            del name
+            del subject
+            del message
+            del from_email
         except BadHeaderError:
             return HttpResponse('Invalid header found.')
 
