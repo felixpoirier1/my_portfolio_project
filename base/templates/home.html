@@ -485,12 +485,13 @@
         </div>
         
         <form action="" method="POST" role="form" class="php-email-form mt-4">
+          {% csrf_token %}
           <div class="row">
             <div class="col-md-6 form-group">
               <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
             </div>
             <div class="col-md-6 form-group mt-3 mt-md-0">
-              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+              <input type="email" class="form-control" name="from_email" id="email" placeholder="Your Email" required>
             </div>
           </div>
           <div class="form-group mt-3">
@@ -524,7 +525,6 @@
   <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
   <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
   <script src="{% static 'vendor/waypoints/noframework.waypoints.js' %}"></script>
-  <script src="{% static 'vendor/php-email-form/validate.js'  %}"></script>
 
   <!-- Template Main JS File -->
   <script src="{% static 'js/main.js' %}"></script>

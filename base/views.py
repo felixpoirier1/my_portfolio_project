@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.core.mail import BadHeaderError, send_mail
+from django.http import HttpResponse, HttpResponseRedirect
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -15,6 +16,27 @@ import os
 # Create your views here.
 def home(request):
     projects = Project.objects.all()
+    name = request.POST.get('name')
+    subject = request.POST.get('subject')
+    message = request.POST.get('message')
+    from_email = request.POST.get('from_email')
+
+    content = '''
+    {}
+    \t
+    \t
+    From {}
+    \t
+    Email {}
+    '''.format(message, name, from_email)
+
+    if subject and message and from_email:
+        try:
+            send_mail(subject, content, from_email, ['felixpoirier2001@gmail.com'], fail_silently = False)
+            print('LOLOL')
+        except BadHeaderError:
+            return HttpResponse('Invalid header found.')
+
     context = {'projects': projects}
     return render(request, 'home.html', context)
 
