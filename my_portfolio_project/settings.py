@@ -148,16 +148,6 @@ SECURE_HSTS_INCLUDE_SUBDOMAINS = True'''
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-'''EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER='felixpoirier2001@gmail.com'
-EMAIL_HOST_PASSWORD = 'jpuentpgrjqbrpvu'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False
-SERVER_EMAIL = 'felixpoirier2001@gmail.com'
-DEFAULT_FROM_EMAIL = 'felixpoirier2001@gmail.com'''
-
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST='smtp.gmail.com'
 EMAIL_PORT=587
@@ -165,3 +155,8 @@ EMAIL_HOST_USER = 'felixpoirier2001@gmail.com'
 EMAIL_HOST_PASSWORD = 'jpuentpgrjqbrpvu'  
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 EMAIL_USE_TLS = True
+
+if os.getcwd() == '/app':
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    SECURE_SSL_REDIRECT = True
+    DEBUG = False
