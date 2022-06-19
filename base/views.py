@@ -37,6 +37,8 @@ def home(request):
             del subject
             del message
             del from_email
+            return render(request, 'home.html', context)
+
         except BadHeaderError:
             return HttpResponse('Invalid header found.')
 
