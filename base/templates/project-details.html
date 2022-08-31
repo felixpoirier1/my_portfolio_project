@@ -90,7 +90,9 @@
                 <li><strong>Technology</strong>: {{project.technology}}</li>
                 <li><strong>Themes</strong>: {{project.theme}}</li>
                 <li><strong>Creation</strong>: {{project.created|timesince}} ago</li>
+                {% if project.git_hub_link %}
                 <a target="_blank" href="{{project.git_hub_link}}" class="github" style="font-size:300%;"><i class="bi bi-github"></i></a>
+                {% endif %}
               </ul>
 
               <p style="color:rgb(255, 255, 255);">
